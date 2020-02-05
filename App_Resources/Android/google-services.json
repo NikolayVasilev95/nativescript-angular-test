@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "38755914548",
+    "firebase_url": "https://teamandwin-3c82f.firebaseio.com",
+    "project_id": "teamandwin-3c82f",
+    "storage_bucket": "teamandwin-3c82f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:38755914548:android:d084bc89319535707b0b61",
+        "android_client_info": {
+          "package_name": "com.teamandwin.demo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "38755914548-ligvkla2qn9u5a8ca9s8a2qc96l8e1db.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCX7KOkMfijHB-goCaEd6rSrXbvFYQwjG8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "38755914548-ligvkla2qn9u5a8ca9s8a2qc96l8e1db.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

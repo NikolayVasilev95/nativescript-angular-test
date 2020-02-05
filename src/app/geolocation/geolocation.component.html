@@ -1,0 +1,36 @@
+<app-main-navbar></app-main-navbar>
+
+<!-- Main -->
+<main class="container" style="height: 704px;">
+  <div class="row py-3">
+    <div class="col-md-12 text-center">
+      <!-- Card -->
+      <mdb-card>
+        <!-- Card header -->
+        <mdb-card-header>
+          <h4>Geolocation</h4>
+        </mdb-card-header>
+        <!-- /.Card header -->
+        <!-- Card content -->
+        <mdb-card-body>
+          <!--Text-->
+          <mdb-card-text>
+            <button type="button" mdbBtn color="primary" mdbWavesEffect (click)="getLocation()">Primary</button>
+          </mdb-card-text>
+          <!--Text-->
+          <mdb-card-text>
+            Latitude: {{ latitude }}
+          </mdb-card-text>
+          <!--Text-->
+          <mdb-card-text>
+            Longitude: {{ longitude }}
+          </mdb-card-text>
+        </mdb-card-body>
+      </mdb-card>
+    </div>
+  </div>
+</main>
+<!-- /.Main -->
+
+
+<app-footer></app-footer>

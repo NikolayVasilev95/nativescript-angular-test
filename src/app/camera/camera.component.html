@@ -1,0 +1,83 @@
+<app-main-navbar></app-main-navbar>
+
+<!-- Main -->
+<main class="container-fluid">
+  <div class="row py-3">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <!-- Card -->
+      <mdb-card>
+        <!-- Card header -->
+        <mdb-card-header>
+          <h4>Webcam</h4>
+        </mdb-card-header>
+        <!-- /.Card header -->
+        <!-- Card content -->
+        <mdb-card-body>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="row d-flex justify-content-center">
+                <webcam [height]="400" [width]="400" [trigger]="triggerObservable" (imageCapture)="handleImage($event)" *ngIf="showWebcam"
+                  [allowCameraSwitch]="allowCameraSwitch" [switchCamera]="nextWebcamObservable"
+                  [videoOptions]="videoOptions"
+                  [imageQuality]="1"
+                  (cameraSwitched)="cameraWasSwitched($event)"
+                  (initError)="handleInitError($event)">
+                </webcam>
+              </div>
+            </div>
+          </div>
+          <div class="row my-3">
+            <div class="col-md-12 text-center">
+              <button type="button" mdbBtn color="light" (click)="triggerSnapshot()" mdbWavesEffect>Take A Snapshot</button>
+              <button type="button" mdbBtn color="light" (click)="toggleWebcam()" mdbWavesEffect>Toggle Webcam</button>
+            </div>
+          </div>
+          <div class="row my-3">
+            <div class="col-md-12 text-center">
+              <button type="button" mdbBtn color="secondary" (click)="showNextWebcam(true);" [disabled]="!multipleWebcamsAvailable" mdbWavesEffect>Next Webcam</button>
+              <mdb-checkbox [checked]="false" [default]="true" [(ngModel)]="allowCameraSwitch">Allow Camera Switch</mdb-checkbox>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="md-form">
+                <input mdbInput type="text" [(ngModel)]="deviceId" id="deviceId" class="form-control">
+                <label for="deviceId">DeviceId</label>
+              </div>
+            </div>
+          </div>
+          <div class="row my-3">
+            <div class="col-md-12 text-center">
+              <button type="button" mdbBtn color="info" (click)="showNextWebcam(deviceId)" mdbWavesEffect>Activate</button>
+            </div>
+          </div>
+          <mdb-card-text>
+            <h4 *ngIf="errors.length > 0">Messages:</h4>
+            <ul *ngFor="let error of errors">
+              <li>{{error | json}}</li>
+            </ul>
+          </mdb-card-text>
+        </mdb-card-body>
+        <!-- /.Card content -->
+        <!-- Card footer -->
+        <mdb-card-footer class="unique-color" *ngIf="webcamImage">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="row d-flex justify-content-center">
+                <img [src]="webcamImage.imageAsDataUrl" class="img-fluid z-depth-5" alt="1">
+              </div>
+            </div>
+          </div>
+        </mdb-card-footer>
+        <!-- /.Card footer -->
+      </mdb-card>
+      <!-- /.Card -->
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+</main>
+<!-- /.Main -->
+
+
+<app-footer></app-footer>
